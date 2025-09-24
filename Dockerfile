@@ -1,8 +1,13 @@
-FROM python:3.10-slim-buster
+FROM python:3.10-slim-bullseye
+
 WORKDIR /app
 COPY . /app
 
-RUN apt update -y && apt install awscli -y
+# Install AWS CLI using pip
+RUN pip install awscli --upgrade
 
-RUN apt-get update && pip install -r requirements.txt
+# Install other dependencies
+RUN pip install -r requirements.txt
+
+# Run your app
 CMD ["python3", "app.py"]

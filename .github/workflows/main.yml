@@ -7,7 +7,6 @@ on:
     paths-ignore:
       - 'README.md'
 
-
 jobs:
   integration:
     name: Continuous Integration
@@ -22,7 +21,7 @@ jobs:
       - name: Run unit tests
         run: echo "Running unit tests"
 
-build-and-push-ecr-image:
+  build-and-push-ecr-image:
     name: Continuous Delivery
     needs: integration
     runs-on: ubuntu-latest
@@ -34,6 +33,7 @@ build-and-push-ecr-image:
         run: |
           sudo apt-get update
           sudo apt-get install -y jq unzip
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -44,5 +44,3 @@ build-and-push-ecr-image:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-
-      

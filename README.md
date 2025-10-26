@@ -29,6 +29,7 @@ MACHINE LEARNING PIPELINE:
 
 Data Ingestion
     ↓
+    
 Data Validation (schema check + drift detection)
     ↓
 Data Transformation (scaling, encoding)

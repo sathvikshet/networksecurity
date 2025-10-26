@@ -28,11 +28,15 @@ It includes an automated training pipeline, real-time prediction API, data valid
 MACHINE LEARNING PIPELINE:
 
 Data Ingestion--> 
+
 Data Validation (schema check + drift detection)-->
-Data Transformation (scaling, encoding)-->Model Training (hyperparameter tuning)
-    ↓
-Model Evaluation (f1, precision, recall)
-    ↓
-Model Saving + AWS S3 Sync
-    ↓
+
+Data Transformation (scaling, encoding)-->
+
+Model Training (hyperparameter tuning)-->
+
+Model Evaluation (f1, precision, recall)-->
+
+Model Saving + AWS S3 Sync-->
+
 FastAPI Prediction Endpoint
